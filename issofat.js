@@ -1,4 +1,6 @@
-var leftPan, rightPan, maxWeight = 0;
+var leftPan, rightPan,
+	maxWeight = 0,
+	dragOffset = {};
 
 window.onload = function() {
 	var items = document.getElementsByClassName('item');
@@ -22,14 +24,14 @@ window.onload = function() {
 }
 
 function onDrag(event) {
-	var offset = getPosition(event.target);
-	offset.x -= event.clientX;
-	offset.y -= event.clientY;
+	event.dataTransfer.setData('Text', event.target.id);
 
-	//event.dataTransfer.setData('id', event.target.id);
-	event.dataTransfer.setData('offsetX', offset.x);
-	event.dataTransfer.setData('offsetY', offset.y);
+	var position = event.target.getBoundingClientRect();
 
+	dragOffset.x = position.left - event.clientX;
+	dragOffset.y = event.clientY - position.bottom;
+
+	event.target.style.transition = 'bottom 0s';
 }
 
 function onOver(event) {
@@ -39,32 +41,22 @@ function onOver(event) {
 }
 
 function onDrop(event) {
-	var item = document.getElementById('item0'),
-		position = getPosition(event.target),
-		offset = {
-			x: Number(event.dataTransfer.getData('offsetX')),
-			y: Number(event.dataTransfer.getData('offsetY'))
-		};
+	var item = document.getElementById(event.dataTransfer.getData('Text')),
+		itemSize = item.getBoundingClientRect(),
+		position = event.target.getBoundingClientRect();
 
 	event.preventDefault();
 	event.target.appendChild(item);
-	item.style.left = event.clientX - position.x + offset.x + 'px';
-	item.style.top = event.clientY - position.y + offset.y + 'px';
-	item.style.webkitAnimation = 'none';
-	setTimeout(function() {
-		item.style.webkitAnimation = 'fall 5s';
-	}, 10);
-	calculate();
-}
 
-function getPosition(element) {
-	var position = { x: 0, y: 0 };
-	while (element) {
-		position.x += element.offsetLeft;
-		position.y += element.offsetTop;
-		element = element.offsetParent;
-	}
-	return position;
+	item.style.left = event.clientX - position.left + dragOffset.x + 'px';
+	item.style.bottom = (position.bottom - event.clientY) + dragOffset.y + 'px';
+
+	window.setTimeout(function() {
+		item.style.transition = 'bottom 0.15s ease-in';
+		item.style.bottom = 0;
+	}, 10);
+
+	update();
 }
 
 function getWeight(target) {
@@ -72,10 +64,10 @@ function getWeight(target) {
 	for (var i = 0, len = target.children.length; i < len; i++) {
 		weight += target.children[i].weight;
 	}
-	return 50 + (weight / maxWeight) * 50 + '%';
+	return 50 + (weight / maxWeight) * 25 + '%';
 }
 
-function calculate() {
+function update() {
 	leftPan.style.height = getWeight(leftPan);
 	rightPan.style.height = getWeight(rightPan);
 }

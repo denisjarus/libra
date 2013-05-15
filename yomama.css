@@ -3,6 +3,8 @@ html, body {
 	height: 100%;
 
 	margin: 0;
+
+	overflow-x: hidden;
 }
 
 .item {
@@ -11,14 +13,11 @@ html, body {
 
 	position: absolute;
 
-	bottom: 0px;
+	bottom: 0;
 
 	background-color: black;
 
-	-webkit-animation-name: fall;
-	-webkit-animation-duration: 0.5s;
-	-webkit-animation-timing-function: ease-in;
-	-webkit-animation-fill-mode: forwards;
+	cursor: move;
 }
 
 .target {
@@ -36,12 +35,12 @@ html, body {
 }
 
 #left-pan, #right-pan {
-	width: 200px;
+	width: 300px;
 	height: 50%;
 
 	background-color: red;
 
-	-webkit-transition: height 1s;
+	transition: height 2s;
 }
 
 #left-pan {
@@ -50,13 +49,4 @@ html, body {
 
 #right-pan {
 	right: 20%;
-}
-
-@-webkit-keyframes fall {
-	from {
-		bottom: 100%;
-	}
-	to {
-		bottom: 0px;
-	}
 }
