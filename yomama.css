@@ -1,0 +1,62 @@
+html, body {
+	width: 100%;
+	height: 100%;
+
+	margin: 0;
+}
+
+.item {
+	width: 100px;
+	height: 100px;
+
+	position: absolute;
+
+	bottom: 0px;
+
+	background-color: black;
+
+	-webkit-animation-name: fall;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-timing-function: ease-in;
+	-webkit-animation-fill-mode: forwards;
+}
+
+.target {
+	position: absolute;
+}
+
+#ground {
+	width: 100%;
+	height: 75%;
+
+	min-width: 800px;
+	min-height: 600px;
+
+	background-color: gray;
+}
+
+#left-pan, #right-pan {
+	width: 200px;
+	height: 50%;
+
+	background-color: red;
+
+	-webkit-transition: height 1s;
+}
+
+#left-pan {
+	left: 20%;
+}
+
+#right-pan {
+	right: 20%;
+}
+
+@-webkit-keyframes fall {
+	from {
+		bottom: 100%;
+	}
+	to {
+		bottom: 0px;
+	}
+}
