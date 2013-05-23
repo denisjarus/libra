@@ -1,52 +1,138 @@
 html, body {
-	width: 100%;
-	height: 100%;
+	margin: 0;
+
+	background-color: #5a5a5a;
+}
+
+#main {
+	width: 1280px;
+
+	margin: 0 auto;
+
+	background-color: rgb(198, 198, 198);
+}
+
+#main > * {
+	width: 1024px;
+
+	margin: 0 auto;
+}
+
+header, footer {
+	font-family: Courier, monospace;
+	font-weight: bold;
+
+	text-align: center;
+
+	background-color: rgb(238, 238, 238);
+}
+
+header {
+	padding: 15px 0;
+
+	font-size: 32px;
+}
+
+footer > * {
+	font-size: 14px;
 
 	margin: 0;
 
-	overflow-x: hidden;
+	padding: 20px 35px;
+}
+
+footer > h1, #left-menu, #right-menu {
+	font-family: Verdana, Arial, sans-serif;
+}
+
+footer > h1 {
+	font-weight: normal;
+	font-size: 24px;
+
+	text-align: left;
+}
+
+#left-menu, #right-menu {
+	font-weight: bold;
+	font-size: 10px;
+
+	text-align: right;
+}
+
+#left-menu {
+	float: left;
 }
 
 .item {
-	width: 100px;
-	height: 100px;
-
 	position: absolute;
 
-	bottom: 0;
-
-	background-color: black;
+	bottom: 45px;
 
 	cursor: move;
+
+	border: 2px dashed rgba(255, 0, 0, 0);
+	border-radius: 10px;
+
+	transition: bottom 0.15s ease-in, opacity 0.5s, border-color 0.2s;
 }
 
-.target {
-	position: absolute;
+.item:hover {
+	border-color: rgba(255, 0, 0, 1);
 }
 
 #ground {
-	width: 100%;
-	height: 75%;
+	height: 720px;
 
-	min-width: 800px;
-	min-height: 600px;
+	position: relative;
 
-	background-color: gray;
+	background: url('img/ground.png') bottom repeat-x white;
 }
 
 #left-pan, #right-pan {
-	width: 300px;
-	height: 50%;
+	width: 480px;
+	height: 405px;
+
+	position: absolute;
 
 	background-color: red;
+
+	top: 0px;
 
 	transition: height 2s;
 }
 
 #left-pan {
-	left: 20%;
+	left: 32px;
+
+	background: url('img/left-pan.png') bottom center no-repeat;
 }
 
 #right-pan {
-	right: 20%;
+	right: 32px;
+
+	background: url('img/right-pan.png') bottom center no-repeat;
+}
+
+#libra {
+	width: 720px;
+	height: 640px;
+
+	position: relative;
+
+	margin: 0 auto;
+
+	background: url('img/libra.png') bottom center no-repeat;
+}
+
+#arrow {
+	width: 10px;
+	height: 100%;
+
+	margin: 0 auto;
+
+	background: url('img/arrow.png') bottom center no-repeat;
+
+	transition: all 2s;
+	transform-origin: 50% 100%;
+	-webkit-transform-origin: 50% 100%;
 }

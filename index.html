@@ -7,12 +7,44 @@
 	<script src="issofat.js"></script>
 </head>
 <body>
-	<div class="target" id="ground">
-		<div class="target" id="left-pan"></div>
-		<div class="target" id="right-pan"></div>
-		<div class="item" draggable="true"></div>
-		<div class="item" draggable="true"></div>
-		<div class="item" draggable="true"></div>
+	<div id="main">
+		<header>Space-time libra of universal equilibrium</header>
+		<div id="ground">
+			<div id="libra">
+				<div id="arrow"></div>
+			</div>
+			<div id="left-pan"></div>
+			<div id="right-pan"></div>
+			<img class="item" draggable="true" src="img/stool.png"></img>
+			<img class="item" draggable="true" src="img/betty.png"></img>
+			<img class="item" draggable="true" src="img/fedora.png"></img>
+			<img class="item" draggable="true" src="img/telescope.png"></img>
+			<img class="item" draggable="true" src="img/lie.png"></img>
+			<img class="item" draggable="true" src="img/mail.png"></img>
+			<img class="item" draggable="true" src="img/barbasol.png"></img>
+			<img class="item" draggable="true" src="img/object.png"></img>
+			<img class="item" draggable="true" src="img/pillow.png"></img>
+			<img class="item" draggable="true" src="img/grimoire.png"></img>
+			<img class="item" draggable="true" src="img/martini.png"></img>
+			<img class="item" draggable="true" src="img/jaspers.png"></img>
+		</div>
+		<footer>
+			<p>
+				You find yourself looking at some BADLY DRAWN SCALES and a bunch of various ITEMS that do not make any sense to you. It seems the guy responsible for this little demo is really into that <a href="http://www.mspaintadventures.com/">HOMESTUCK</a> webcomic he has been reading a lot recently. Utilizing his remarkable skill of MIMICRY he even bothered himself to copy its drawing style and markup with some moderate success. What a waste of time! You think you need to balance the SCALEPANS with all the ITEMS present by dragging and dropping them using NATIVE HTML5 DND in order to activate the link below. What will you do?
+			</p>
+			<h1>
+				<span>></span>
+				<a id="proceed" href="#">Receive your well-deserved reward</a>
+			</h1>
+			<div id="left-menu">
+				<a href="#" onclick="loadGame(true)">Start Over</a>
+			</div>
+			<div id="right-menu">
+				<a href="#" onclick="saveGame()">Save Game</a>
+				<span>|</span>
+				<a href="#" onclick="loadGame()">Load Game</a>
+			</span>
+		</footer>
 	</div>
 </body>
 </html>
