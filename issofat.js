@@ -107,10 +107,12 @@ function update() {
 		ui.proceed.style.color = null;
 		ui.proceed.style.textDecoration = null;
 		ui.proceed.setAttribute('href', 'http://www.mspaintadventures.com/?s=6&p=pony');
+		ui.proceed.setAttribute('onclick', null);
 	} else {
 		ui.proceed.style.color = 'gray';
 		ui.proceed.style.textDecoration = 'none';
 		ui.proceed.setAttribute('href', '#');
+		ui.proceed.setAttribute('onclick', 'return false');
 	}
 }
 
@@ -129,6 +131,7 @@ function saveGame(session) {
 	} catch(error) {
 		console.log(error);
 	}
+	return false;
 }
 
 function loadGame(session) {
@@ -146,4 +149,5 @@ function loadGame(session) {
 	} catch(error) {
 		console.log(error);
 	}
+	return false;
 }
