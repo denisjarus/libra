@@ -1,138 +1,138 @@
 html, body {
-	margin: 0;
+    margin: 0;
 
-	background-color: #5a5a5a;
+    background-color: #5a5a5a;
 }
 
 #main {
-	width: 1280px;
+    width: 1280px;
 
-	margin: 0 auto;
+    margin: 0 auto;
 
-	background-color: rgb(198, 198, 198);
+    background-color: rgb(198, 198, 198);
 }
 
 #main > * {
-	width: 1024px;
+    width: 1024px;
 
-	margin: 0 auto;
+    margin: 0 auto;
 }
 
 header, footer {
-	font-family: Courier, monospace;
-	font-weight: bold;
+    font-family: Courier, monospace;
+    font-weight: bold;
 
-	text-align: center;
+    text-align: center;
 
-	background-color: rgb(238, 238, 238);
+    background-color: rgb(238, 238, 238);
 }
 
 header {
-	padding: 15px 0;
+    padding: 15px 0;
 
-	font-size: 32px;
+    font-size: 32px;
 }
 
 footer > * {
-	font-size: 14px;
+    font-size: 14px;
 
-	margin: 0;
+    margin: 0;
 
-	padding: 20px 35px;
+    padding: 20px 35px;
 }
 
 footer > h1, #left-menu, #right-menu {
-	font-family: Verdana, Arial, sans-serif;
+    font-family: Verdana, Arial, sans-serif;
 }
 
 footer > h1 {
-	font-weight: normal;
-	font-size: 24px;
+    font-weight: normal;
+    font-size: 24px;
 
-	text-align: left;
+    text-align: left;
 }
 
 #left-menu, #right-menu {
-	font-weight: bold;
-	font-size: 10px;
+    font-weight: bold;
+    font-size: 10px;
 
-	text-align: right;
+    text-align: right;
 }
 
 #left-menu {
-	float: left;
+    float: left;
 }
 
 .item {
-	position: absolute;
+    position: absolute;
 
-	bottom: 45px;
+    bottom: 45px;
 
-	cursor: move;
+    cursor: move;
 
-	border: 2px dashed rgba(255, 0, 0, 0);
-	border-radius: 10px;
+    border: 2px dashed rgba(255, 0, 0, 0);
+    border-radius: 10px;
 
-	transition: bottom 0.15s ease-in, opacity 0.5s, border-color 0.2s;
+    transition: bottom 0.15s ease-in, opacity 0.5s, border-color 0.2s;
 }
 
 .item:hover {
-	border-color: rgba(255, 0, 0, 1);
+    border-color: rgba(255, 0, 0, 1);
 }
 
 #ground {
-	height: 720px;
+    height: 720px;
 
-	position: relative;
+    position: relative;
 
-	background: url('img/ground.png') bottom repeat-x white;
+    background: url('img/ground.png') bottom repeat-x white;
 }
 
 #left-pan, #right-pan {
-	width: 480px;
-	height: 405px;
+    width: 480px;
+    height: 405px;
 
-	position: absolute;
+    position: absolute;
 
-	background-color: red;
+    background-color: red;
 
-	top: 0px;
+    top: 0px;
 
-	transition: height 2s;
+    transition: height 2s;
 }
 
 #left-pan {
-	left: 32px;
+    left: 32px;
 
-	background: url('img/left-pan.png') bottom center no-repeat;
+    background: url('img/left-pan.png') bottom center no-repeat;
 }
 
 #right-pan {
-	right: 32px;
+    right: 32px;
 
-	background: url('img/right-pan.png') bottom center no-repeat;
+    background: url('img/right-pan.png') bottom center no-repeat;
 }
 
 #libra {
-	width: 720px;
-	height: 640px;
+    width: 720px;
+    height: 640px;
 
-	position: relative;
+    position: relative;
 
-	margin: 0 auto;
+    margin: 0 auto;
 
-	background: url('img/libra.png') bottom center no-repeat;
+    background: url('img/libra.png') bottom center no-repeat;
 }
 
 #arrow {
-	width: 10px;
-	height: 100%;
+    width: 10px;
+    height: 100%;
 
-	margin: 0 auto;
+    margin: 0 auto;
 
-	background: url('img/arrow.png') bottom center no-repeat;
+    background: url('img/arrow.png') bottom center no-repeat;
 
-	transition: all 2s;
-	transform-origin: 50% 100%;
-	-webkit-transform-origin: 50% 100%;
+    transition: all 2s;
+    transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%;
 }
